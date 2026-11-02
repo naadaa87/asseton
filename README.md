@@ -106,12 +106,17 @@ asseton/
 │  ├─ assets/img/          og.png(공유 미리보기), apple-touch-icon.png
 │  ├─ assets/files/        엑셀 이관 템플릿
 │  └─ _headers             보안 헤더와 캐시 설정
+├─ docs/                   개발기획서·기능명세서·제작지시서, 엑셀 이관 템플릿 (배포 안 됨)
 ├─ worker/index.js         /api/inquiry, /api/health
 ├─ wrangler.jsonc          Cloudflare Workers 설정
 └─ package.json
 ```
 
-## 4. 내 컴퓨터에서 미리 보기 (개발자용)
+## 4. 기획 자료
+
+`docs/` 폴더에 개발기획서, 기능명세서, 제작지시서(Word·PDF)와 엑셀 이관 템플릿이 있습니다. 목록은 [docs/README.md](docs/README.md) 에 있습니다. 이 폴더는 홈페이지로 배포되지 않습니다.
+
+## 5. 내 컴퓨터에서 미리 보기 (개발자용)
 
 ```bash
 npm install
@@ -123,7 +128,7 @@ npm run check        # 배포 전 점검 (실제로 올리지는 않음)
 
 ---
 
-## 5. 공개 전 확인할 것
+## 6. 공개 전 확인할 것
 
 - [ ] 통신판매업 신고 후 `src/site.mjs` 의 `COMPANY.mailOrder` 입력 (유료 판매 시작 전)
 - [ ] `site-config.js` 에 대표 이메일·전화 입력 (개인정보 보호책임자 연락처로도 쓰입니다)
