@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자산운영 PM — 관리비 14개 항목·고지·수납·월간 보고 | 에셋온 AssetOn</title>
+<meta name="description" content="임대차·렌트롤, 만기와 갱신 통지 기한, 법정 14개 항목 기준 관리비 산정과 배분, 알림톡 고지서, 가상계좌 입금 매칭, 7·30·60일 연체 관리, 전자세금계산서, 월간 보고서 자동 초안.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="에셋온 AssetOn">
+<meta property="og:title" content="자산운영 PM — 관리비 14개 항목·고지·수납·월간 보고 | 에셋온 AssetOn">
+<meta property="og:description" content="임대차·렌트롤, 만기와 갱신 통지 기한, 법정 14개 항목 기준 관리비 산정과 배분, 알림톡 고지서, 가상계좌 입금 매칭, 7·30·60일 연체 관리, 전자세금계산서, 월간 보고서 자동 초안.">
+
+<meta property="og:image" content="/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1c36">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/asseton-sans-kr-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/asseton-sans-kr-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"관리비 배분 기준이 항목마다 다른데 가능한가요?","acceptedAnswer":{"@type":"Answer","text":"가능합니다. 일반관리비는 전용면적, 전기료는 호실 검침, 승강기유지비는 층별 계수처럼 항목마다 다른 기준을 정할 수 있습니다. 배분 뒤 생기는 몇 원의 끝수는 가장 큰 호실에서 맞추고, 그 내역을 산정 근거표에 남깁니다."}},{"@type":"Question","name":"관리비를 정액으로 받는 호실도 섞여 있습니다.","acceptedAnswer":{"@type":"Answer","text":"정액 계약 호실은 배분 대신 계약 금액을 그대로 쓰고, 배분했을 때와의 차이는 건물주 손익에 따로 보여 줍니다. 렌트프리 기간의 관리비 면제 여부도 계약마다 정합니다."}},{"@type":"Question","name":"고지서를 잘못 보냈으면 어떻게 하나요?","acceptedAnswer":{"@type":"Answer","text":"확정한 관리비는 고칠 수 없게 잠기고, 정정 고지로 처리합니다. 차액만 다시 보내거나 고지서를 새로 발행할 수 있고, 정정 사유와 승인자가 기록됩니다."}},{"@type":"Question","name":"수납 대행을 하려면 에셋온과 돈이 오가나요?","acceptedAnswer":{"@type":"Answer","text":"아닙니다. 가상계좌는 관리회사나 건물주가 PG사와 직접 계약해 발급하고, 입금된 돈은 그 계좌로 바로 정산됩니다. 에셋온은 입금 알림을 받아 어느 고지서인지 맞추는 일만 합니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈"},{"@type":"ListItem","position":2,"name":"기능"},{"@type":"ListItem","position":3,"name":"자산운영 PM"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="에셋온 홈"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#0f1c36"/><circle cx="16" cy="16" r="7.2" fill="none" stroke="#2b3a59" stroke-width="2"/><circle cx="16" cy="16" r="4.4" fill="#17a35f"/><circle cx="14.6" cy="14.6" r="1.3" fill="#bdebd1"/></svg><span class="brand-name">AssetOn<span>에셋온</span></span></a>
+    <nav aria-label="주 메뉴"><ul class="gnb"><li><button class="menu" type="button" aria-expanded="false" aria-controls="dd-features" data-active="true">기능<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dropdown" id="dd-features"><a href="/features/"><b>전체 기능</b><span>여덟 개 모듈과 출시 단계</span></a><hr><a href="/features/fm"><b>시설관리 FM</b><span>점검·작업·법정점검·근무·민원</span></a><a href="/features/pm"><b>자산운영 PM</b><span>임대차·관리비·수납·월간 보고</span></a><a href="/features/am"><b>자산관리 AM</b><span>포트폴리오·NOI·예산·투자자 보고</span></a><a href="/features/sales"><b>영업·견적</b><span>FM 견적 엔진·제안서·수주 전환</span></a><a href="/features/portals"><b>포털</b><span>건물주·임차사·협력업체 화면</span></a></div></li><li><button class="menu" type="button" aria-expanded="false" aria-controls="dd-solutions">누가 쓰나요<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dropdown" id="dd-solutions"><a href="/solutions/fm"><b>FM 시설관리 회사</b><span>현장 기록과 견적을 한 곳에서</span></a><a href="/solutions/pm"><b>PM 자산운영 회사</b><span>관리비부터 월간 보고까지</span></a><a href="/solutions/am"><b>자산운용사 · 다건물 건물주</b><span>여러 PM사의 숫자를 같은 양식으로</span></a><a href="/solutions/site"><b>관리소장 · 자가관리 건물</b><span>혼자 관리하는 건물의 법정 기록</span></a></div></li><li><a href="/demo/">체험판</a></li><li><a href="/pricing">요금</a></li><li><a href="/security">보안</a></li><li><a href="/insights/">인사이트</a></li></ul></nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="/demo/">체험판</a>
+      <a class="btn btn-primary btn-sm" href="/signup">사전 신청</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mnav" aria-label="메뉴 열기"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mnav" aria-label="모바일 메뉴"><div class="grp">기능</div><a href="/features/">전체 기능</a><a href="/features/fm">시설관리 FM</a><a href="/features/pm">자산운영 PM</a><a href="/features/am">자산관리 AM</a><a href="/features/sales">영업·견적</a><a href="/features/portals">포털</a><div class="grp">누가 쓰나요</div><a href="/solutions/fm">FM 시설관리 회사</a><a href="/solutions/pm">PM 자산운영 회사</a><a href="/solutions/am">자산운용사 · 다건물 건물주</a><a href="/solutions/site">관리소장 · 자가관리 건물</a><a href="/demo/">체험판</a><a href="/pricing">요금</a><a href="/security">보안</a><a href="/insights/">인사이트</a><a href="/about">회사 소개</a><a href="/roadmap">출시 일정</a><a href="/help/">도움말</a><a class="btn btn-primary" href="/signup">사전 신청</a></nav>
+<main id="main">
+
+<section class="page-hero with-art"><div class="wrap"><div><p class="crumb"><a href="/">홈</a> / <a href="/features/">기능</a> / 자산운영 PM</p><h1>관리비 고지부터 수납, 월간 보고까지 한 흐름으로</h1><p class="lede">임대차 계약에 적힌 조건이 관리비 산정으로, 산정 결과가 고지서와 세금계산서로, 입금과 연체가 월간 보고서로 이어집니다. 2026년 5월부터 시행된 관리비 14개 항목 세부내역 제공 의무를 기본으로 맞췄습니다.</p><div class="actions"><a class="btn btn-primary" href="/signup">사전 신청하기</a><a class="btn btn-line" href="/demo/fee">관리비 체험판</a></div></div><div><div class="device"><div class="bar"><i></i><i></i><i></i><span class="url">자산운영 · 관리비 산정</span></div>
+  <div class="main" style="padding:16px;background:#fafbfc">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h5 style="margin:0;font-size:14px;color:var(--ink)">역삼 A빌딩 · 3월 관리비</h5><span class="chip blue">초안 · 확정 전</span></div>
+    <table class="mini-table">
+      <thead><tr><th>호실</th><th class="r sm-hide">전용㎡</th><th class="r">일반관리비</th><th class="r sm-hide">청소·경비</th><th class="r">전기료</th><th class="r">합계</th></tr></thead>
+      <tbody>
+        <tr><td>201호</td><td class="r sm-hide">412.5</td><td class="r">412,500</td><td class="r sm-hide">288,750</td><td class="r">318,400</td><td class="r">1,019,650</td></tr>
+        <tr><td>301호</td><td class="r sm-hide">412.5</td><td class="r">412,500</td><td class="r sm-hide">288,750</td><td class="r">296,100</td><td class="r">997,350</td></tr>
+        <tr style="background:var(--amber-tint)"><td>502호</td><td class="r sm-hide">498.0</td><td class="r">498,000</td><td class="r sm-hide">348,600</td><td class="r">438,000</td><td class="r">1,284,600</td></tr>
+        <tr><td>공실 701호</td><td class="r sm-hide">286.4</td><td class="r">286,400</td><td class="r sm-hide">200,480</td><td class="r">12,300</td><td class="r">499,180</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:#6b4300;margin-top:10px;background:var(--amber-tint);padding:8px 10px;border-radius:6px">502호 전기료가 전월보다 34% 늘었습니다. 검침값을 확인한 뒤 확정하세요.</div>
+    <div style="font-size:11px;color:var(--muted);margin-top:8px">공실 호실의 공용 항목은 건물주 부담으로 따로 모입니다.</div>
+  </div></div><p class="mock-note">예시 화면입니다. 건물명과 숫자는 실제 고객 데이터가 아닙니다.</p></div></div></section>
+<section class="section "><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>PM 담당자의 한 달</h2><p>매달 같은 순서로 반복되는 일을 시스템이 순서대로 안내합니다. 담당자는 숫자를 확인하고 확정 버튼을 누르는 데 시간을 씁니다.</p></div></div><ol class="steps-list"><li><div><b>검침 마감</b><span>현장이 워크 앱으로 계량기 숫자를 찍어 올리면 호실별 사용량이 계산됩니다.</span></div></li><li><div><b>산정과 확인</b><span>항목별 총액을 넣으면 배분 기준대로 호실별 금액이 나옵니다. 전월보다 30% 넘게 달라진 호실은 노랗게 표시됩니다.</span></div></li><li><div><b>확정과 고지</b><span>확정하면 금액이 잠기고, 14개 항목이 보이는 고지서가 알림톡으로 나갑니다. 호실마다 정해진 가상계좌가 함께 안내됩니다.</span></div></li><li><div><b>입금 확인</b><span>가상계좌 입금은 자동으로, 은행 거래내역은 엑셀로 올려 맞춥니다. 맞지 않는 입금만 따로 모아 보여 줍니다.</span></div></li><li><div><b>연체 안내</b><span>납부기한 다음 날부터 7일·30일·60일 단계로 안내와 독촉장이 나가고, 연체료가 계산됩니다.</span></div></li><li><div><b>세금계산서</b><span>임대료와 관리비 세금계산서를 월 일괄로 발행하고 국세청 전송 결과를 확인합니다.</span></div></li><li><div><b>월간 보고서</b><span>다섯 숫자와 NOI, 만기, 연체, 지출, 법정점검 이행이 채워진 초안에 특이사항만 쓰고 발행합니다.</span></div></li></ol></div></div></section>
+<section class="section mist"><div class="wrap"><div class="sec-head "><h2>자산운영 기능</h2></div><div class="table-scroll"><table class="table"><thead><tr><th scope="col">기능</th><th scope="col">하는 일</th><th scope="col">출시</th></tr></thead><tbody><tr><td class="k">관리계약</td><td>건물주와 맺은 관리 범위, 수수료 구조, 인력 구성, 보고 의무, 승인 금액 기준. 갱신 90·60일 전에 알립니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">임대차와 렌트롤</td><td>호실·면적·보증금·임대료·관리비 방식·렌트프리·인상 조건·특약. 건물별 렌트롤 표로 보고 엑셀로 내립니다. 계약서 사진에서 초안을 읽어 옵니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">만기와 갱신</td><td>만기 180·120·90·60·30일 전 알림. 갱신 거절·조건 변경 통지 기간과 갱신요구권 상태, 인상 상한 초과 여부를 표시하고, 건물주 승인을 받아 갱신 계약을 만듭니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">관리비 산정</td><td>법정 14개 항목 기준의 항목 체계, 항목마다 다른 배분 기준(전용면적·계약면적·지분·검침·정액·사용자 수·균등), 공실분 건물주 부담 분리, 전월 대비 이상치 경고, 확정 후 잠금.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">고지와 청구</td><td>항목별 세부내역이 보이는 고지서를 관리회사 브랜드로 만들어 알림톡·이메일로 보냅니다. 발송과 열람 기록이 남습니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">수납과 입금 매칭</td><td>호실별 가상계좌 입금은 자동으로, 은행 거래내역은 엑셀로 올려 입금자명·금액으로 맞춥니다. 부분 납부·과오납·선납도 처리합니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">연체 관리</td><td>7·30·60일 단계별 알림톡과 독촉장, 연체료 계산, 3기분 연체 경고, 보증금 공제 시뮬레이션, 법무 조치 기록.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">전자세금계산서</td><td>임대료·관리비 세금계산서를 월 일괄로 발행하고 국세청 전송 상태를 확인합니다. 발행·전송 기한을 알립니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">월간 보고서</td><td>임대율·수납률·관리비·수선·민원 다섯 숫자와 NOI, 만기, 연체, 지출, 법정점검 이행, 결정이 필요한 일이 채워진 초안. 승인 후 PDF와 링크로 발행하고 열람을 확인합니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">보증금과 퇴거 정산</td><td>보증금 대장, 퇴거 체크리스트, 원상복구 범위와 사진, 미납·공과금 공제 정산서를 임차사가 확인합니다.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">예산·지출·승인</td><td>건물별 연간 예산, 지출 결의와 견적 첨부, 금액 구간별 승인(관리소장 → PM → 건물주), 예산 대비 실적.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">공실과 임대 안내</td><td>공실 일수와 기회 손실, 임대 안내문 자동 생성, 문의·투어 기록, 중개법인 공유.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">보험과 법정 서류</td><td>영업배상·화재·승강기 보험 증권과 만기, 청구 이력. 법정 신고·검사 서류 보관.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">회계 연계와 장부</td><td>건물별 수입·지출 원장, 세무사·회계 프로그램용 엑셀, 집합건물 월별 장부 출력. 회계 프로그램 직접 연동은 2028년.</td><td><span class="chip blue">2027년 하반기</span></td></tr></tbody></table></div><p class="note mt-2">"첫 출시"는 파일럿 운영과 함께 쓰는 기능, "2027년 하반기"와 "2028년"은 그 뒤 순서대로 공개할 기능입니다. 일정은 파일럿 결과에 따라 바뀔 수 있습니다.</p></div></section>
+<section class="section "><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>법정 14개 항목에 맞춘 관리비 체계</h2><p>임차인이 요청하면 아래 14개 항목의 세부내역을 제공해야 합니다(상가건물 임대차보호법, 2026년 5월 12일 시행). 에셋온의 관리비 항목은 처음부터 이 14개에 연결되어 있고, 주차비처럼 따로 받는 항목은 그 아래에 추가합니다.</p></div><ul class="bullets plain mt-3" style="columns:2;column-gap:24px;font-size:var(--fs-15)"><li style="break-inside:avoid">일반관리비</li><li style="break-inside:avoid">청소비</li><li style="break-inside:avoid">경비비</li><li style="break-inside:avoid">소독비</li><li style="break-inside:avoid">승강기유지비</li><li style="break-inside:avoid">냉난방비·급탕비</li><li style="break-inside:avoid">수선유지비</li><li style="break-inside:avoid">위탁관리수수료</li><li style="break-inside:avoid">전기료</li><li style="break-inside:avoid">수도료</li><li style="break-inside:avoid">가스사용료</li><li style="break-inside:avoid">정화조오물처리수수료</li><li style="break-inside:avoid">폐기물처리수수료</li><li style="break-inside:avoid">건물전체보험료</li></ul><p class="note mt-3">월 관리비가 10만원 미만인 임차인에게는 항목만 표시하는 간단한 고지도 쓸 수 있습니다. 정액 관리비는 항목별 금액, 비정액은 항목과 산정 방식을 표준계약서에 적습니다.</p></div><div><div class="sec-head "><h2>항목마다 다른 배분 기준</h2></div><div class="table-scroll"><table class="table"><thead><tr><th scope="col">기준</th><th scope="col">계산</th><th scope="col">주로 쓰는 항목</th></tr></thead><tbody><tr><td class="k">전용면적 비율</td><td>호실 전용면적 ÷ 건물 전용면적 합</td><td>일반관리비, 청소비, 경비비</td></tr><tr><td class="k">계약면적 비율</td><td>계약서상 면적 기준</td><td>공용면적을 포함해 계약한 오피스</td></tr><tr><td class="k">규약 지분</td><td>관리규약에서 정한 지분, 없으면 전유면적 비율</td><td>집합건물 공용부분 관리비</td></tr><tr><td class="k">검침 사용량</td><td>호실 계량기 사용량</td><td>전기료, 수도료, 가스사용료</td></tr><tr><td class="k">공용 사용량 배분</td><td>(총 사용량 − 호실 사용량 합) × 면적 비율</td><td>공용 전기, 공용 수도</td></tr><tr><td class="k">정액</td><td>계약서에 정한 금액</td><td>정액 관리비 계약 호실</td></tr><tr><td class="k">층별·구역별 계수</td><td>층·구역마다 다른 가중치</td><td>승강기유지비, 냉난방비</td></tr><tr><td class="k">사용자 수 · 균등</td><td>인원 또는 호실 수로 나눔</td><td>폐기물처리수수료, 정화조 비용</td></tr></tbody></table></div></div></div></div></section>
+<section class="section mist"><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>만기와 갱신을 법정 기한과 함께 봅니다</h2></div></div><div><div class="table-scroll"><table class="table"><thead><tr><th scope="col">에셋온이 표시하는 기준</th><th scope="col">내용</th></tr></thead><tbody><tr><td class="k">갱신 거절·조건 변경 통지</td><td>만기 6개월 전부터 1개월 전까지(도달 기준). 기간이 지나면 같은 조건으로 1년 묵시적 갱신 가능성을 경고합니다.</td></tr><tr><td class="k">갱신요구권</td><td>최초 계약 기간을 포함해 10년. 계약마다 남은 기간을 표시합니다.</td></tr><tr><td class="k">차임 증액</td><td>환산보증금 이내 계약은 5% 상한, 증액 뒤 1년 안에 다시 올릴 수 없습니다. 넘는 인상률을 넣으면 경고합니다.</td></tr><tr><td class="k">환산보증금</td><td>보증금 + 월세 × 100. 지역별 기준액(2026년 서울 9억원)은 설정 표에 두고 법이 바뀌면 갱신합니다.</td></tr><tr><td class="k">3기 연체</td><td>연체액이 3기분 차임에 이르면 해지와 갱신 거절 사유가 될 수 있다는 점을 담당자에게 알립니다.</td></tr></tbody></table></div><p class="note mt-2">법률 판단을 대신하지 않습니다. 기한과 기준을 놓치지 않도록 표시하는 기능이며, 구체적인 사안은 법률 자문을 받으세요.</p></div></div></div></section>
+<section class="section "><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>에셋온은 관리비를 보관하지 않습니다</h2><p>관리비와 임대료는 관리회사나 건물주의 계좌로 바로 들어갑니다. 에셋온은 입금 알림과 거래내역을 받아 맞추는 일만 하고, 돈을 맡거나 나눠 보내지 않습니다.</p></div></div><div><ul class="checks" style="grid-template-columns:1fr"><li><div><b>가상계좌는 귀사 명의로</b><span>관리회사나 건물주가 PG사와 직접 계약해 호실별 가상계좌를 받습니다. 입금은 PG사가 그 계좌로 정산합니다.</span></div></li><li><div><b>은행 거래내역으로도 됩니다</b><span>PG를 쓰지 않는 건물은 통장 거래내역 엑셀을 올리면 입금자명과 금액으로 맞춥니다.</span></div></li><li><div><b>수수료는 실비</b><span>가상계좌 수수료는 PG사와 맺은 계약 그대로입니다. 에셋온은 그 위에 수수료를 얹지 않습니다.</span></div></li></ul></div></div></div></section>
+<section class="section mist"><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>자주 묻는 질문</h2></div></div><div class="faq"><details><summary>관리비 배분 기준이 항목마다 다른데 가능한가요?</summary><div class="a">가능합니다. 일반관리비는 전용면적, 전기료는 호실 검침, 승강기유지비는 층별 계수처럼 항목마다 다른 기준을 정할 수 있습니다. 배분 뒤 생기는 몇 원의 끝수는 가장 큰 호실에서 맞추고, 그 내역을 산정 근거표에 남깁니다.</div></details><details><summary>관리비를 정액으로 받는 호실도 섞여 있습니다.</summary><div class="a">정액 계약 호실은 배분 대신 계약 금액을 그대로 쓰고, 배분했을 때와의 차이는 건물주 손익에 따로 보여 줍니다. 렌트프리 기간의 관리비 면제 여부도 계약마다 정합니다.</div></details><details><summary>고지서를 잘못 보냈으면 어떻게 하나요?</summary><div class="a">확정한 관리비는 고칠 수 없게 잠기고, 정정 고지로 처리합니다. 차액만 다시 보내거나 고지서를 새로 발행할 수 있고, 정정 사유와 승인자가 기록됩니다.</div></details><details><summary>수납 대행을 하려면 에셋온과 돈이 오가나요?</summary><div class="a">아닙니다. 가상계좌는 관리회사나 건물주가 PG사와 직접 계약해 발급하고, 입금된 돈은 그 계좌로 바로 정산됩니다. 에셋온은 입금 알림을 받아 어느 고지서인지 맞추는 일만 합니다.</div></details></div></div></div></section>
+<section class="cta-band"><div class="wrap"><div><h2>첫 관리회사들과 함께 만들고 있습니다</h2><p>에셋온은 2027년 상반기 파일럿 관리회사의 현장에서 먼저 운영합니다. 사전 신청을 남기시면 파일럿 참여 조건과 출시 일정을 가장 먼저 안내드립니다.</p></div><div class="actions"><a class="btn btn-on btn-lg" href="/signup">사전 신청하기</a><a class="btn btn-line btn-lg" href="/demo/">체험판 써 보기</a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="에셋온 홈"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#0f1c36"/><circle cx="16" cy="16" r="7.2" fill="none" stroke="#2b3a59" stroke-width="2"/><circle cx="16" cy="16" r="4.4" fill="#17a35f"/><circle cx="14.6" cy="14.6" r="1.3" fill="#bdebd1"/></svg><span class="brand-name">AssetOn<span>에셋온</span></span></a>
+        <p>Asset Management System ON(AMSO). FM·PM·AM 관리회사가 현장 기록부터 관리비, 월간 보고, 포트폴리오 숫자까지 한 흐름으로 관리하는 구독형 자산관리시스템입니다.</p>
+        <p class="status-line mt-2"><span class="lamp"></span>파일럿 관리회사 모집 중</p>
+      </div>
+      <div><h4>제품</h4><ul><li><a href="/features/">전체 기능</a></li><li><a href="/features/fm">시설관리 FM</a></li><li><a href="/features/pm">자산운영 PM</a></li><li><a href="/features/am">자산관리 AM</a></li><li><a href="/features/sales">영업·견적</a></li><li><a href="/features/portals">포털</a></li></ul></div><div><h4>대상</h4><ul><li><a href="/solutions/fm">FM 시설관리 회사</a></li><li><a href="/solutions/pm">PM 자산운영 회사</a></li><li><a href="/solutions/am">자산운용사·다건물 건물주</a></li><li><a href="/solutions/site">관리소장·자가관리</a></li></ul></div><div><h4>자료</h4><ul><li><a href="/demo/">체험판</a></li><li><a href="/insights/">인사이트</a></li><li><a href="/help/">도움말</a></li><li><a href="/faq">자주 묻는 질문</a></li><li><a href="/help/#templates">엑셀 이관 템플릿</a></li></ul></div><div><h4>회사</h4><ul><li><a href="/pricing">요금</a></li><li><a href="/security">보안·데이터</a></li><li><a href="/roadmap">출시 일정</a></li><li><a href="/partners">파트너</a></li><li><a href="/about">회사 소개</a></li><li><a href="/signup">사전 신청</a></li></ul></div>
+    </div>
+    <div class="foot-biz">
+      <dl>
+        <div><dt>상호</dt><dd>주식회사 지유공간개발</dd></div>
+        <div><dt>대표</dt><dd>최시준</dd></div>
+        <div><dt>사업자등록번호</dt><dd>757-86-04159</dd></div>
+        <div><dt>주소</dt><dd>경기도 화성시 병점구 경기대로 1014, 6층 603호·605호 (병점동)</dd></div>
+        <div data-contact="email" hidden><dt>이메일</dt><dd></dd></div>
+        <div data-contact="phone" hidden><dt>전화</dt><dd></dd></div>
+        
+      </dl>
+      <div class="legal-links"><a href="/legal/privacy">개인정보처리방침</a><a href="/legal/terms">이용약관</a><a href="/legal/sla">서비스 수준</a></div>
+      <p>© 2026 주식회사 지유공간개발. 에셋온(AssetOn)은 주식회사 지유공간개발가 개발·운영합니다.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site-config.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

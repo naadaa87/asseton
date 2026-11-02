@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>영업·견적 — FM 견적 엔진·제안서·수주 전환 | 에셋온 AssetOn</title>
+<meta name="description" content="시설관리 견적서의 수식과 반올림 규칙을 그대로 옮긴 FM 견적 엔진. 직책·인원·근무형태·시급으로 인건비·4대보험·퇴직충당·복리후생·관리비·이윤 계산, 연도별 요율, 발송 전 자동 확인, 엑셀·PDF 출력.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="에셋온 AssetOn">
+<meta property="og:title" content="영업·견적 — FM 견적 엔진·제안서·수주 전환 | 에셋온 AssetOn">
+<meta property="og:description" content="시설관리 견적서의 수식과 반올림 규칙을 그대로 옮긴 FM 견적 엔진. 직책·인원·근무형태·시급으로 인건비·4대보험·퇴직충당·복리후생·관리비·이윤 계산, 연도별 요율, 발송 전 자동 확인, 엑셀·PDF 출력.">
+
+<meta property="og:image" content="/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1c36">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/asseton-sans-kr-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/asseton-sans-kr-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"우리 회사 견적서 양식과 다르면요?","acceptedAnswer":{"@type":"Answer","text":"항목 이름과 순서, 관리비율·이윤율, 절사 단위, 특기사항 문구를 회사 설정으로 바꿀 수 있습니다. 지금 쓰는 엑셀 견적서를 보내 주시면 같은 숫자가 나오는지 먼저 맞춰 드립니다."}},{"@type":"Question","name":"산재보험 요율이 회사마다 다르지 않나요?","acceptedAnswer":{"@type":"Answer","text":"맞습니다. 기본값은 업종 기준요율이고, 회사가 고지받은 실제 요율을 설정에 넣으면 모든 견적에 그 값이 쓰입니다."}},{"@type":"Question","name":"다음 해 최저임금으로 미리 견적할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"기준연도를 고르면 그해 최저시급과 보험요율이 한 번에 적용됩니다. 10월 이후에 만드는 견적은 다음 해를 기준연도로 제안합니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈"},{"@type":"ListItem","position":2,"name":"기능"},{"@type":"ListItem","position":3,"name":"영업·견적"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="에셋온 홈"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#0f1c36"/><circle cx="16" cy="16" r="7.2" fill="none" stroke="#2b3a59" stroke-width="2"/><circle cx="16" cy="16" r="4.4" fill="#17a35f"/><circle cx="14.6" cy="14.6" r="1.3" fill="#bdebd1"/></svg><span class="brand-name">AssetOn<span>에셋온</span></span></a>
+    <nav aria-label="주 메뉴"><ul class="gnb"><li><button class="menu" type="button" aria-expanded="false" aria-controls="dd-features" data-active="true">기능<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dropdown" id="dd-features"><a href="/features/"><b>전체 기능</b><span>여덟 개 모듈과 출시 단계</span></a><hr><a href="/features/fm"><b>시설관리 FM</b><span>점검·작업·법정점검·근무·민원</span></a><a href="/features/pm"><b>자산운영 PM</b><span>임대차·관리비·수납·월간 보고</span></a><a href="/features/am"><b>자산관리 AM</b><span>포트폴리오·NOI·예산·투자자 보고</span></a><a href="/features/sales"><b>영업·견적</b><span>FM 견적 엔진·제안서·수주 전환</span></a><a href="/features/portals"><b>포털</b><span>건물주·임차사·협력업체 화면</span></a></div></li><li><button class="menu" type="button" aria-expanded="false" aria-controls="dd-solutions">누가 쓰나요<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dropdown" id="dd-solutions"><a href="/solutions/fm"><b>FM 시설관리 회사</b><span>현장 기록과 견적을 한 곳에서</span></a><a href="/solutions/pm"><b>PM 자산운영 회사</b><span>관리비부터 월간 보고까지</span></a><a href="/solutions/am"><b>자산운용사 · 다건물 건물주</b><span>여러 PM사의 숫자를 같은 양식으로</span></a><a href="/solutions/site"><b>관리소장 · 자가관리 건물</b><span>혼자 관리하는 건물의 법정 기록</span></a></div></li><li><a href="/demo/">체험판</a></li><li><a href="/pricing">요금</a></li><li><a href="/security">보안</a></li><li><a href="/insights/">인사이트</a></li></ul></nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="/demo/">체험판</a>
+      <a class="btn btn-primary btn-sm" href="/signup">사전 신청</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mnav" aria-label="메뉴 열기"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mnav" aria-label="모바일 메뉴"><div class="grp">기능</div><a href="/features/">전체 기능</a><a href="/features/fm">시설관리 FM</a><a href="/features/pm">자산운영 PM</a><a href="/features/am">자산관리 AM</a><a href="/features/sales">영업·견적</a><a href="/features/portals">포털</a><div class="grp">누가 쓰나요</div><a href="/solutions/fm">FM 시설관리 회사</a><a href="/solutions/pm">PM 자산운영 회사</a><a href="/solutions/am">자산운용사 · 다건물 건물주</a><a href="/solutions/site">관리소장 · 자가관리 건물</a><a href="/demo/">체험판</a><a href="/pricing">요금</a><a href="/security">보안</a><a href="/insights/">인사이트</a><a href="/about">회사 소개</a><a href="/roadmap">출시 일정</a><a href="/help/">도움말</a><a class="btn btn-primary" href="/signup">사전 신청</a></nav>
+<main id="main">
+
+<section class="page-hero with-art"><div class="wrap"><div><p class="crumb"><a href="/">홈</a> / <a href="/features/">기능</a> / 영업·견적</p><h1>엑셀 견적서와 원 단위까지 같은 견적 엔진</h1><p class="lede">관계사 지유코퍼레이션이 실제로 쓰던 시설관리 견적서의 수식과 반올림·절사 규칙을 그대로 옮겼습니다. 같은 입력이면 엑셀과 같은 결과가 나오는지 직책 하나하나 검증했고, 그 과정에서 찾은 수식 오류는 바로잡았습니다.</p><div class="actions"><a class="btn btn-primary" href="/demo/quote">견적 체험판</a><a class="btn btn-line" href="/signup">사전 신청하기</a></div></div><div><div class="device"><div class="bar"><i></i><i></i><i></i><span class="url">영업 · FM 견적서</span></div>
+  <div class="main" style="padding:16px;background:#fafbfc">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap"><h5 style="margin:0;font-size:14px;color:var(--ink)">견적 Q-2027-0031 · 오피스 16명</h5><span class="chip">2027년 요율 적용</span></div>
+    <table class="mini-table">
+      <thead><tr><th>직군</th><th class="r">인원</th><th>근무형태</th><th class="r">월 금액</th></tr></thead>
+      <tbody>
+        <tr><td>시설관리직</td><td class="r">5</td><td>일근 2 · 3교대 3</td><td class="r">21,840,000</td></tr>
+        <tr><td>보안·주차관리직</td><td class="r">4</td><td>일근 2 · 맞교대 2</td><td class="r">15,320,000</td></tr>
+        <tr><td>환경미화직</td><td class="r">7</td><td>일근 주5일</td><td class="r">20,110,000</td></tr>
+        <tr><td><b>총합계 (월)</b></td><td class="r"><b>16</b></td><td></td><td class="r"><b>58,400,000</b></td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:#6b4300;margin-top:10px;background:var(--amber-tint);padding:8px 10px;border-radius:6px">보내기 전 확인 1건 · 미화원 시급이 2027년 최저시급보다 낮습니다.</div>
+    <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap"><span class="chip">엑셀</span><span class="chip">PDF</span><span class="chip">메일 문구</span><span class="chip">제안서에 넣기</span></div>
+  </div></div><p class="mock-note">예시 화면입니다. 건물명과 숫자는 실제 고객 데이터가 아닙니다.</p></div></div></section>
+<section class="section "><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>견적 금액이 만들어지는 순서</h2><p>계산 과정이 모두 보입니다. 거래처가 "이 금액은 어떻게 나왔나요"라고 물으면 산출내역 한 장으로 답할 수 있습니다.</p></div></div><div><div class="table-scroll"><table class="table"><thead><tr><th scope="col">단계</th><th scope="col">계산</th></tr></thead><tbody><tr><td class="k">기본급</td><td>월 근로시간 × 적용 시급</td></tr><tr><td class="k">수당</td><td>연장(10원 단위 반올림 후 150%) · 야간(50% 가산) · 연차 · 직책 · 면허</td></tr><tr><td class="k">퇴직급여 충당금</td><td>(기본급 + 수당 + 식대) ÷ 12, 원 단위 반올림</td></tr><tr><td class="k">4대보험 외</td><td>(기본급 + 수당) × 요율, 항목별 100원 단위 반올림 + 특수건강진단 + 근로자의 날 + 장애인고용부담금</td></tr><tr><td class="k">복리후생비</td><td>식대 + 선물 + 피복 + 교육 + 운영비</td></tr><tr><td class="k">중계</td><td>직접인건비 + 4대보험 외 + 복리후생비 + 영업배상책임보험</td></tr><tr><td class="k">일반관리비·이윤</td><td>중계 × 율, 직책별 원 단위 반올림 후 합산</td></tr><tr><td class="k">견적 총액</td><td>기타비용 소계(10만원 미만 절사) + 수선유지비 + 감가상각비 → 1,000원 미만 절사</td></tr></tbody></table></div></div></div></div></section>
+<section class="section mist"><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>근무형태와 요율은 고르기만 합니다</h2></div><p class="muted">근무형태별 월 근로시간은 아래 규칙으로 계산하고, 요율은 기준연도를 고르면 한 번에 바뀝니다.</p><div class="table-scroll"><table class="table"><thead><tr><th scope="col">근무형태</th><th scope="col">월 근로시간</th></tr></thead><tbody><tr><td class="k">일근 주5일</td><td>1일 실근로 × (5+1)/7 × 365/12</td></tr><tr><td class="k">3교대</td><td>(주간 + 야간 실근로) × 365/12 ÷ 3</td></tr><tr><td class="k">24시간 맞교대</td><td>(주간 + 야간 실근로) × 365/12 ÷ 2</td></tr></tbody></table></div></div><div><h3>2027년 기준값</h3><div class="mt-2"><div class="table-scroll"><table class="table"><thead><tr><th scope="col">항목</th><th scope="col">값</th><th scope="col">비고</th></tr></thead><tbody><tr><td class="k">법정 최저시급</td><td>10,700원</td><td>2027년 적용 (2026년 7월 결정)</td></tr><tr><td class="k">국민연금 (사업주)</td><td>5.0%</td><td>보험료율 10% 중 절반</td></tr><tr><td class="k">건강보험 (사업주)</td><td>3.595%</td><td>보험료율 7.19%</td></tr><tr><td class="k">장기요양보험</td><td>건강보험료의 13.14%</td><td>2027년 고시 전, 2026년 값 준용</td></tr><tr><td class="k">고용보험 (사업주)</td><td>0.9% + 0.25%</td><td>실업급여 + 고용안정·직업능력개발(150인 미만)</td></tr><tr><td class="k">산재보험</td><td>0.86%</td><td>시설관리 및 사업지원 서비스업 예시, 회사 고지 요율로 변경</td></tr></tbody></table></div></div><p class="note mt-2">2026년 10월 기준입니다. 고시가 나오면 기준값을 갱신하고 설정 화면에 공지합니다.</p></div></div></div></section>
+<section class="section "><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>보내기 전에 다시 보지 않아도 되도록</h2></div></div><div><ul class="checks" style="grid-template-columns:1fr">
+  <li><div><b>최저시급 미달</b><span>적용 시급이 기준연도 최저시급보다 낮은 직책을 짚습니다.</span></div></li>
+  <li><div><b>연도 불일치</b><span>특기사항이나 근무시간표에 기준연도와 다른 연도가 남아 있으면 알립니다.</span></div></li>
+  <li><div><b>근무시간 이상</b><span>휴게시간이 비었거나 하루 근로시간이 24시간을 넘으면 알립니다.</span></div></li>
+  <li><div><b>인원 합계</b><span>직군별 인원 합과 총 인원이 다르면 알립니다.</span></div></li>
+  <li><div><b>다른 거래처 정보</b><span>내보내는 엑셀에는 견적 시트만 들어갑니다. 숨긴 시트에 다른 거래처 자료가 섞여 나가는 일이 없습니다.</span></div></li>
+</ul></div></div></div></section>
+<section class="section mist"><div class="wrap"><div class="sec-head "><h2>영업·견적 기능</h2></div><div class="table-scroll"><table class="table"><thead><tr><th scope="col">기능</th><th scope="col">하는 일</th><th scope="col">출시</th></tr></thead><tbody><tr><td class="k">FM 견적 엔진</td><td>직책별 인원·근무형태·시급·수당으로 인건비, 4대보험, 퇴직급여 충당금, 복리후생비, 일반관리비, 이윤을 계산합니다. 반올림·절사 규칙까지 엑셀 견적서와 같습니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">보내기 전 확인</td><td>적용 시급이 그해 최저시급보다 낮거나, 특기사항의 연도가 기준연도와 다르거나, 휴게시간이 비어 있으면 알려 줍니다.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">출력과 공유</td><td>견적총괄·산출내역·근무시간표·미화 배치계획 엑셀(A4 인쇄 설정 포함)과 PDF, 메일 문구·금액표 복사, 공유 링크.</td><td><span class="chip on">첫 출시</span></td></tr><tr><td class="k">제안서</td><td>회사 소개·연혁·인증·보험·매뉴얼·실적을 데이터로 보관해 두고, 건물 조건과 견적을 넣으면 제안서 PDF가 나옵니다.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">수주 파이프라인</td><td>리드 → 제안 → 협상 → 계약 단계, 입찰 마감 알림, 실패 사유, 제안 채택률.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">수주 뒤 세팅</td><td>수주를 확정하면 건물, 관리계약, 견적의 인력 배치, 법정점검 일정, 점검 템플릿이 한 번에 만들어지고 인수인계 체크리스트가 뜹니다.</td><td><span class="chip blue">2027년 하반기</span></td></tr></tbody></table></div><p class="note mt-2">"첫 출시"는 파일럿 운영과 함께 쓰는 기능, "2027년 하반기"와 "2028년"은 그 뒤 순서대로 공개할 기능입니다. 일정은 파일럿 결과에 따라 바뀔 수 있습니다.</p></div></section>
+<section class="section "><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>자주 묻는 질문</h2></div></div><div class="faq"><details><summary>우리 회사 견적서 양식과 다르면요?</summary><div class="a">항목 이름과 순서, 관리비율·이윤율, 절사 단위, 특기사항 문구를 회사 설정으로 바꿀 수 있습니다. 지금 쓰는 엑셀 견적서를 보내 주시면 같은 숫자가 나오는지 먼저 맞춰 드립니다.</div></details><details><summary>산재보험 요율이 회사마다 다르지 않나요?</summary><div class="a">맞습니다. 기본값은 업종 기준요율이고, 회사가 고지받은 실제 요율을 설정에 넣으면 모든 견적에 그 값이 쓰입니다.</div></details><details><summary>다음 해 최저임금으로 미리 견적할 수 있나요?</summary><div class="a">기준연도를 고르면 그해 최저시급과 보험요율이 한 번에 적용됩니다. 10월 이후에 만드는 견적은 다음 해를 기준연도로 제안합니다.</div></details></div></div></div></section>
+<section class="cta-band"><div class="wrap"><div><h2>첫 관리회사들과 함께 만들고 있습니다</h2><p>에셋온은 2027년 상반기 파일럿 관리회사의 현장에서 먼저 운영합니다. 사전 신청을 남기시면 파일럿 참여 조건과 출시 일정을 가장 먼저 안내드립니다.</p></div><div class="actions"><a class="btn btn-on btn-lg" href="/signup">사전 신청하기</a><a class="btn btn-line btn-lg" href="/demo/">체험판 써 보기</a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="에셋온 홈"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#0f1c36"/><circle cx="16" cy="16" r="7.2" fill="none" stroke="#2b3a59" stroke-width="2"/><circle cx="16" cy="16" r="4.4" fill="#17a35f"/><circle cx="14.6" cy="14.6" r="1.3" fill="#bdebd1"/></svg><span class="brand-name">AssetOn<span>에셋온</span></span></a>
+        <p>Asset Management System ON(AMSO). FM·PM·AM 관리회사가 현장 기록부터 관리비, 월간 보고, 포트폴리오 숫자까지 한 흐름으로 관리하는 구독형 자산관리시스템입니다.</p>
+        <p class="status-line mt-2"><span class="lamp"></span>파일럿 관리회사 모집 중</p>
+      </div>
+      <div><h4>제품</h4><ul><li><a href="/features/">전체 기능</a></li><li><a href="/features/fm">시설관리 FM</a></li><li><a href="/features/pm">자산운영 PM</a></li><li><a href="/features/am">자산관리 AM</a></li><li><a href="/features/sales">영업·견적</a></li><li><a href="/features/portals">포털</a></li></ul></div><div><h4>대상</h4><ul><li><a href="/solutions/fm">FM 시설관리 회사</a></li><li><a href="/solutions/pm">PM 자산운영 회사</a></li><li><a href="/solutions/am">자산운용사·다건물 건물주</a></li><li><a href="/solutions/site">관리소장·자가관리</a></li></ul></div><div><h4>자료</h4><ul><li><a href="/demo/">체험판</a></li><li><a href="/insights/">인사이트</a></li><li><a href="/help/">도움말</a></li><li><a href="/faq">자주 묻는 질문</a></li><li><a href="/help/#templates">엑셀 이관 템플릿</a></li></ul></div><div><h4>회사</h4><ul><li><a href="/pricing">요금</a></li><li><a href="/security">보안·데이터</a></li><li><a href="/roadmap">출시 일정</a></li><li><a href="/partners">파트너</a></li><li><a href="/about">회사 소개</a></li><li><a href="/signup">사전 신청</a></li></ul></div>
+    </div>
+    <div class="foot-biz">
+      <dl>
+        <div><dt>상호</dt><dd>주식회사 지유공간개발</dd></div>
+        <div><dt>대표</dt><dd>최시준</dd></div>
+        <div><dt>사업자등록번호</dt><dd>757-86-04159</dd></div>
+        <div><dt>주소</dt><dd>경기도 화성시 병점구 경기대로 1014, 6층 603호·605호 (병점동)</dd></div>
+        <div data-contact="email" hidden><dt>이메일</dt><dd></dd></div>
+        <div data-contact="phone" hidden><dt>전화</dt><dd></dd></div>
+        
+      </dl>
+      <div class="legal-links"><a href="/legal/privacy">개인정보처리방침</a><a href="/legal/terms">이용약관</a><a href="/legal/sla">서비스 수준</a></div>
+      <p>© 2026 주식회사 지유공간개발. 에셋온(AssetOn)은 주식회사 지유공간개발가 개발·운영합니다.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site-config.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

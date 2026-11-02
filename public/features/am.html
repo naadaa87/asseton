@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>자산관리 AM — 포트폴리오·NOI·예산·투자자 보고 | 에셋온 AssetOn</title>
+<meta name="description" content="자산운용사·리츠 AMC·다건물 건물주를 위한 포트폴리오 대시보드. 자산별 임대율·NOI·예산 대비 실적·만기 위험·수납률·법정점검 이행률과 투자자 보고용 데이터 세트.">
+
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="에셋온 AssetOn">
+<meta property="og:title" content="자산관리 AM — 포트폴리오·NOI·예산·투자자 보고 | 에셋온 AssetOn">
+<meta property="og:description" content="자산운용사·리츠 AMC·다건물 건물주를 위한 포트폴리오 대시보드. 자산별 임대율·NOI·예산 대비 실적·만기 위험·수납률·법정점검 이행률과 투자자 보고용 데이터 세트.">
+
+<meta property="og:image" content="/assets/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0f1c36">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/asseton-sans-kr-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/asseton-sans-kr-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"PM사가 에셋온을 쓰지 않아도 볼 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"PM사가 에셋온을 쓰는 자산은 숫자가 바로 올라옵니다. 쓰지 않는 PM사의 자산은 월간 렌트롤과 손익을 엑셀로 올리면 같은 양식으로 합쳐 보여 줍니다."}},{"@type":"Question","name":"투자보고서를 그대로 만들어 주나요?","acceptedAnswer":{"@type":"Answer","text":"보고서에 들어가는 자산별 데이터 세트를 만들어 드립니다. 임대현황 표, 수익 구분, 업무위탁비용, 만기 1년 이내·이후 임대료 같은 항목입니다. 재무제표와 감사의견처럼 회계법인이 확정하는 부분은 범위 밖입니다."}},{"@type":"Question","name":"자산가치를 자동으로 추정하나요?","acceptedAnswer":{"@type":"Answer","text":"추정하지 않습니다. 감정평가나 내부 평가 결과를 입력하면 그 값과 NOI로 캡레이트와 추이를 계산해 보여 줍니다."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"홈"},{"@type":"ListItem","position":2,"name":"기능"},{"@type":"ListItem","position":3,"name":"자산관리 AM"}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로가기</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="에셋온 홈"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#0f1c36"/><circle cx="16" cy="16" r="7.2" fill="none" stroke="#2b3a59" stroke-width="2"/><circle cx="16" cy="16" r="4.4" fill="#17a35f"/><circle cx="14.6" cy="14.6" r="1.3" fill="#bdebd1"/></svg><span class="brand-name">AssetOn<span>에셋온</span></span></a>
+    <nav aria-label="주 메뉴"><ul class="gnb"><li><button class="menu" type="button" aria-expanded="false" aria-controls="dd-features" data-active="true">기능<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dropdown" id="dd-features"><a href="/features/"><b>전체 기능</b><span>여덟 개 모듈과 출시 단계</span></a><hr><a href="/features/fm"><b>시설관리 FM</b><span>점검·작업·법정점검·근무·민원</span></a><a href="/features/pm"><b>자산운영 PM</b><span>임대차·관리비·수납·월간 보고</span></a><a href="/features/am"><b>자산관리 AM</b><span>포트폴리오·NOI·예산·투자자 보고</span></a><a href="/features/sales"><b>영업·견적</b><span>FM 견적 엔진·제안서·수주 전환</span></a><a href="/features/portals"><b>포털</b><span>건물주·임차사·협력업체 화면</span></a></div></li><li><button class="menu" type="button" aria-expanded="false" aria-controls="dd-solutions">누가 쓰나요<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button><div class="dropdown" id="dd-solutions"><a href="/solutions/fm"><b>FM 시설관리 회사</b><span>현장 기록과 견적을 한 곳에서</span></a><a href="/solutions/pm"><b>PM 자산운영 회사</b><span>관리비부터 월간 보고까지</span></a><a href="/solutions/am"><b>자산운용사 · 다건물 건물주</b><span>여러 PM사의 숫자를 같은 양식으로</span></a><a href="/solutions/site"><b>관리소장 · 자가관리 건물</b><span>혼자 관리하는 건물의 법정 기록</span></a></div></li><li><a href="/demo/">체험판</a></li><li><a href="/pricing">요금</a></li><li><a href="/security">보안</a></li><li><a href="/insights/">인사이트</a></li></ul></nav>
+    <div class="header-cta">
+      <a class="btn btn-ghost btn-sm" href="/demo/">체험판</a>
+      <a class="btn btn-primary btn-sm" href="/signup">사전 신청</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mnav" aria-label="메뉴 열기"><svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+    </div>
+  </div>
+</header>
+<nav class="mobile-nav" id="mnav" aria-label="모바일 메뉴"><div class="grp">기능</div><a href="/features/">전체 기능</a><a href="/features/fm">시설관리 FM</a><a href="/features/pm">자산운영 PM</a><a href="/features/am">자산관리 AM</a><a href="/features/sales">영업·견적</a><a href="/features/portals">포털</a><div class="grp">누가 쓰나요</div><a href="/solutions/fm">FM 시설관리 회사</a><a href="/solutions/pm">PM 자산운영 회사</a><a href="/solutions/am">자산운용사 · 다건물 건물주</a><a href="/solutions/site">관리소장 · 자가관리 건물</a><a href="/demo/">체험판</a><a href="/pricing">요금</a><a href="/security">보안</a><a href="/insights/">인사이트</a><a href="/about">회사 소개</a><a href="/roadmap">출시 일정</a><a href="/help/">도움말</a><a class="btn btn-primary" href="/signup">사전 신청</a></nav>
+<main id="main">
+
+<section class="page-hero with-art"><div class="wrap"><div><p class="crumb"><a href="/">홈</a> / <a href="/features/">기능</a> / 자산관리 AM</p><h1>PM사가 달라도 같은 숫자, 같은 양식으로 봅니다</h1><p class="lede">자산운용사와 여러 건물을 가진 건물주는 건물 하나의 운영보다 포트폴리오의 숫자를 봅니다. 에셋온은 PM 단계에서 쌓인 기록을 그대로 올려 보여 주므로, 숫자를 누르면 임대차와 관리비, 지출 원장까지 내려가 근거를 확인할 수 있습니다.</p><div class="actions"><a class="btn btn-primary" href="/signup?type=demo">데모 신청</a><a class="btn btn-line" href="/demo/report">월간 보고서 샘플</a></div></div><div><div class="device"><div class="bar"><i></i><i></i><i></i><span class="url">자산관리 · 포트폴리오</span></div>
+  <div class="main" style="padding:16px;background:#fafbfc">
+    <h5 style="margin:0;font-size:14px;color:var(--ink)">포트폴리오 · 2027년 1분기</h5>
+    <div class="kpis" style="grid-template-columns:repeat(3,1fr)">
+      <div class="kpi"><span>분기 NOI</span><b>14.2억</b><em>예산 대비 +2.1%</em></div>
+      <div class="kpi"><span>가중 임대율</span><b>94.1%</b><em>전분기 +0.8%p</em></div>
+      <div class="kpi"><span>12개월 내 만기</span><b>18.6%</b><em class="down">임대면적 기준</em></div>
+    </div>
+    <table class="mini-table">
+      <thead><tr><th>자산</th><th class="r">임대가능㎡</th><th class="r">임대율</th><th class="r">NOI(분기)</th><th class="r">예산 대비</th></tr></thead>
+      <tbody>
+        <tr><td>역삼 A빌딩</td><td class="r">9,820</td><td class="r">96.2%</td><td class="r">5.51억</td><td class="r">+3.4%</td></tr>
+        <tr><td>성수 B센터</td><td class="r">8,140</td><td class="r">91.0%</td><td class="r">3.86억</td><td class="r" style="color:var(--red)">−1.9%</td></tr>
+        <tr><td>가산 C타워</td><td class="r">6,300</td><td class="r">100%</td><td class="r">2.95억</td><td class="r">+4.0%</td></tr>
+        <tr><td>판교 D스퀘어</td><td class="r">4,910</td><td class="r">88.4%</td><td class="r">1.88억</td><td class="r">+0.6%</td></tr>
+      </tbody>
+    </table>
+    <div style="font-size:11px;color:var(--muted);margin-top:10px">숫자를 누르면 임대차·관리비·지출 원장까지 내려가 근거를 볼 수 있습니다.</div>
+  </div></div><p class="mock-note">예시 화면입니다. 건물명과 숫자는 실제 고객 데이터가 아닙니다.</p></div></div></section>
+<section class="section "><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>보는 숫자와 계산 방식</h2><p>모든 지표의 계산식을 공개합니다. 같은 이름의 숫자가 PM사마다 다르게 계산되는 일을 막기 위해서입니다.</p></div></div><div><div class="table-scroll"><table class="table"><thead><tr><th scope="col">지표</th><th scope="col">계산</th><th scope="col">함께 보는 것</th></tr></thead><tbody><tr><td class="k">임대율</td><td>임대면적 ÷ 임대가능면적</td><td>자산별·가중 평균, 전분기 대비</td></tr><tr><td class="k">순영업수익(NOI)</td><td>임대료·관리비·주차·기타 수입 − 운영비(인건비·수선·보험·공과금·관리수수료 등)</td><td>월·분기·연, 예산 대비</td></tr><tr><td class="k">예산 대비 실적</td><td>계정별 실적 − 예산</td><td>차이가 큰 계정부터 설명</td></tr><tr><td class="k">만기 위험</td><td>12개월 안에 만기가 오는 임대면적 비중, 상위 임차사 비중</td><td>미갱신 시 수입 영향</td></tr><tr><td class="k">수납률</td><td>수납액 ÷ 고지액</td><td>연체 단계별 금액</td></tr><tr><td class="k">법정점검 이행률</td><td>기한 안에 이행한 항목 ÷ 기한이 온 항목</td><td>지연 항목 목록</td></tr><tr><td class="k">캡레이트</td><td>연간 NOI ÷ 평가액</td><td>평가 입력 시</td></tr></tbody></table></div></div></div></div></section>
+<section class="section mist"><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>투자자 보고에 쓸 데이터 세트</h2><p>리츠 투자보고서나 펀드 운용보고서에 들어가는 자산 단위 데이터를 분기마다 같은 형식으로 내려받습니다.</p></div><p class="note">보고 양식은 설정할 수 있습니다. 관련 법령의 보고 의무가 바뀌면 양식을 갱신합니다.</p></div><div><ul class="checks" style="grid-template-columns:1fr"><li><div><b>자산별 임대가능면적·임대면적·임대율·임대차 계약 수</b></div></li><li><div><b>임대료 수익과 관리비 수익 구분</b></div></li><li><div><b>부동산 운영경비 항목별 금액</b></div></li><li><div><b>업무위탁비용 (자산관리·사무수탁·자산보관·임대관리 보수)</b></div></li><li><div><b>만기 1년 이내·이후로 나눈 미래 임대료</b></div></li><li><div><b>차입금 조건 (금액·금리·만기·상환 방식)</b></div></li><li><div><b>감정평가 기준일·평가액·평가법인</b></div></li></ul></div></div></div></section>
+<section class="section "><div class="wrap"><div class="sec-head "><h2>자산관리 기능</h2><p>자산관리 기능은 PM 데이터가 충분히 쌓인 뒤인 2027년 하반기부터 공개합니다.</p></div><div class="table-scroll"><table class="table"><thead><tr><th scope="col">기능</th><th scope="col">하는 일</th><th scope="col">출시</th></tr></thead><tbody><tr><td class="k">포트폴리오 대시보드</td><td>자산별·전체 임대율, NOI, 수납률, 공실 기간, 만기 집중도, 법정점검 이행률. 지역·용도·규모로 비교합니다.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">자산별 손익과 NOI</td><td>임대료·관리비·주차·기타 수입에서 인건비·수선·보험·공과금·관리수수료를 뺀 순영업수익을 월·분기·연으로.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">연간 사업계획과 예산</td><td>임대료 인상률·공실률 가정으로 자산별 예산을 세우고 승인받아, 실적과의 차이를 설명합니다.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">투자자 보고</td><td>자산별 임대현황 표(임대가능면적·임대면적·임대율·계약 수), 임대료·관리비 수익 구분, 업무위탁비용 표를 분기 보고 양식으로.</td><td><span class="chip blue">2027년 하반기</span></td></tr><tr><td class="k">CAPEX 계획</td><td>설비 내용연수와 실사 결과를 연결한 5년 수선 예산과 집행 추적.</td><td><span class="chip ">2028년</span></td></tr><tr><td class="k">만기 위험</td><td>월·연별 만기 분포, 상위 임차사 비중, 미갱신 시 수입 영향.</td><td><span class="chip ">2028년</span></td></tr><tr><td class="k">자산가치</td><td>감정평가와 내부 평가, 캡레이트 추이, 차입 조건과 이자비용 비율.</td><td><span class="chip ">2028년</span></td></tr><tr><td class="k">매입·매각 데이터룸</td><td>법무·물리·재무·운영 체크리스트, 외부 열람 기간과 다운로드 제한, 열람 기록.</td><td><span class="chip ">2028년</span></td></tr></tbody></table></div><p class="note mt-2">"첫 출시"는 파일럿 운영과 함께 쓰는 기능, "2027년 하반기"와 "2028년"은 그 뒤 순서대로 공개할 기능입니다. 일정은 파일럿 결과에 따라 바뀔 수 있습니다.</p></div></section>
+<section class="section mist"><div class="wrap"><div class="split-5-7"><div><div class="sec-head "><h2>자주 묻는 질문</h2></div></div><div class="faq"><details><summary>PM사가 에셋온을 쓰지 않아도 볼 수 있나요?</summary><div class="a">PM사가 에셋온을 쓰는 자산은 숫자가 바로 올라옵니다. 쓰지 않는 PM사의 자산은 월간 렌트롤과 손익을 엑셀로 올리면 같은 양식으로 합쳐 보여 줍니다.</div></details><details><summary>투자보고서를 그대로 만들어 주나요?</summary><div class="a">보고서에 들어가는 자산별 데이터 세트를 만들어 드립니다. 임대현황 표, 수익 구분, 업무위탁비용, 만기 1년 이내·이후 임대료 같은 항목입니다. 재무제표와 감사의견처럼 회계법인이 확정하는 부분은 범위 밖입니다.</div></details><details><summary>자산가치를 자동으로 추정하나요?</summary><div class="a">추정하지 않습니다. 감정평가나 내부 평가 결과를 입력하면 그 값과 NOI로 캡레이트와 추이를 계산해 보여 줍니다.</div></details></div></div></div></section>
+<section class="cta-band"><div class="wrap"><div><h2>운용사·다건물 건물주라면 데모부터</h2><p>보유 자산 구성과 지금 받는 보고 양식을 알려 주시면 에셋온의 대시보드와 보고 데이터 세트로 어떻게 바뀌는지 보여 드립니다.</p></div><div class="actions"><a class="btn btn-on btn-lg" href="/signup">사전 신청하기</a><a class="btn btn-line btn-lg" href="/demo/">체험판 써 보기</a></div></div></section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="brand" href="/" aria-label="에셋온 홈"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect x="1" y="1" width="30" height="30" rx="8" fill="#0f1c36"/><circle cx="16" cy="16" r="7.2" fill="none" stroke="#2b3a59" stroke-width="2"/><circle cx="16" cy="16" r="4.4" fill="#17a35f"/><circle cx="14.6" cy="14.6" r="1.3" fill="#bdebd1"/></svg><span class="brand-name">AssetOn<span>에셋온</span></span></a>
+        <p>Asset Management System ON(AMSO). FM·PM·AM 관리회사가 현장 기록부터 관리비, 월간 보고, 포트폴리오 숫자까지 한 흐름으로 관리하는 구독형 자산관리시스템입니다.</p>
+        <p class="status-line mt-2"><span class="lamp"></span>파일럿 관리회사 모집 중</p>
+      </div>
+      <div><h4>제품</h4><ul><li><a href="/features/">전체 기능</a></li><li><a href="/features/fm">시설관리 FM</a></li><li><a href="/features/pm">자산운영 PM</a></li><li><a href="/features/am">자산관리 AM</a></li><li><a href="/features/sales">영업·견적</a></li><li><a href="/features/portals">포털</a></li></ul></div><div><h4>대상</h4><ul><li><a href="/solutions/fm">FM 시설관리 회사</a></li><li><a href="/solutions/pm">PM 자산운영 회사</a></li><li><a href="/solutions/am">자산운용사·다건물 건물주</a></li><li><a href="/solutions/site">관리소장·자가관리</a></li></ul></div><div><h4>자료</h4><ul><li><a href="/demo/">체험판</a></li><li><a href="/insights/">인사이트</a></li><li><a href="/help/">도움말</a></li><li><a href="/faq">자주 묻는 질문</a></li><li><a href="/help/#templates">엑셀 이관 템플릿</a></li></ul></div><div><h4>회사</h4><ul><li><a href="/pricing">요금</a></li><li><a href="/security">보안·데이터</a></li><li><a href="/roadmap">출시 일정</a></li><li><a href="/partners">파트너</a></li><li><a href="/about">회사 소개</a></li><li><a href="/signup">사전 신청</a></li></ul></div>
+    </div>
+    <div class="foot-biz">
+      <dl>
+        <div><dt>상호</dt><dd>주식회사 지유공간개발</dd></div>
+        <div><dt>대표</dt><dd>최시준</dd></div>
+        <div><dt>사업자등록번호</dt><dd>757-86-04159</dd></div>
+        <div><dt>주소</dt><dd>경기도 화성시 병점구 경기대로 1014, 6층 603호·605호 (병점동)</dd></div>
+        <div data-contact="email" hidden><dt>이메일</dt><dd></dd></div>
+        <div data-contact="phone" hidden><dt>전화</dt><dd></dd></div>
+        
+      </dl>
+      <div class="legal-links"><a href="/legal/privacy">개인정보처리방침</a><a href="/legal/terms">이용약관</a><a href="/legal/sla">서비스 수준</a></div>
+      <p>© 2026 주식회사 지유공간개발. 에셋온(AssetOn)은 주식회사 지유공간개발가 개발·운영합니다.</p>
+    </div>
+  </div>
+</footer>
+<script src="/assets/js/site-config.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

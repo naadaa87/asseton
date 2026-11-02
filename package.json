@@ -1,0 +1,19 @@
+{
+  "name": "asseton",
+  "version": "1.0.0",
+  "private": true,
+  "description": "에셋온 AssetOn 홈페이지 — Cloudflare Workers 정적 자산 + 신청 API",
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "wrangler deploy --dry-run --outdir .wrangler/dry-run"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "wrangler": "^4.156.1"
+  }
+}
